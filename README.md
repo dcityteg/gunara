@@ -28,7 +28,25 @@
 直接拉代码进入项目跟目录  ！
 
 
+
+
 ##本地运行
+
+在 `.env` 文件中 添加 OpenAI API key 和 代理IP:
+
+```
+# 填入 OPENAI_API_KEY
+
+OPENAI_API_KEY = "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"
+
+#模型
+
+MODEL = "gpt-3.5-turbo-16k-0613"
+
+# 代理url
+
+ENDPOINT = "" 
+```
 
 ### 安装依赖
 
