@@ -7,7 +7,7 @@
 #  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝        ╚═╝   
 #
 #  感谢使用ChatGPT仿站，前端高仿官网！
-#  项目地址：
+#  项目地址：https://gitee.com/Flyintro/chatgpt-python-django
 #  作者：vx2893288528  
 
 
