@@ -32,11 +32,11 @@
 
 ### 安装依赖
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 ### 启动django 项目
 
-python manage.py runserver 8088
+`python manage.py runserver` 
 
 ## 项目截图
 
