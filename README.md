@@ -4,7 +4,7 @@
 
 简易版 高仿`ChatGPT` 官网网站，拿来即用
 
-体验地址：[点击体验](http://https://chat.orglen.com)
+体验地址：[点击体验](https://chat.orglen.com)
 
 登录账户：`admin`密码 `admin`
 
