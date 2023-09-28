@@ -4,6 +4,10 @@
 
 简易版 高仿`ChatGPT` 官网网站，拿来即用
 
+体验地址：[点击体验](http://https://chat.orglen.com)
+
+登录账户：`admin`密码 `admin`
+
 该项目基于Python Django version 4.2.1下开发
 
 前端vue已经打包好 并未使用前后端分离技术
