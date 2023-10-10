@@ -47,9 +47,9 @@ OPENAI_API_KEY = "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"
 
 MODEL = "gpt-3.5-turbo-16k-0613"
 
-# 代理url
+# 代理url  可替换
 
-ENDPOINT = "" 
+ENDPOINT = "https://api.openai.com/v1/chat/completions" 
 ```
 
 ### 安装依赖
