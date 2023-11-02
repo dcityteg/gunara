@@ -70,7 +70,7 @@ MODEL = "gpt-3.5-turbo-16k-0613"
 
 ENDPOINT = "https://api.openai.com/v1/chat/completions" 
 ```
-### 如何获取：OPENAI_API_KEY
+#### 如何获取：OPENAI_API_KEY
 两种方法 ：
 
 一种是有openai账户的直接登录官网拿到 OPENAI_API_KEY
