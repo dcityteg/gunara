@@ -144,6 +144,74 @@ uwsgi 相关命令
 
 保存后直接用你绑定的域名访问即可！
 
+> #### 数据库
+
+项目数据库默认使用的 sqlite3
+
+若启动项目报错  请换成 mysql 数据库
+
+安装mysql依赖
+
+    pip install pymysql
+
+在项目中 找到 `ChatGPT_python/__init__.py` 并填入
+
+```
+import pymysql
+pymysql.version_info = (1,4,13,"final",0)
+pymysql.install_as_MySQLdb()
+```
+
+在项目中  `ChatGPT_python/settings.py` 中注释以下代码
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
+并添加以下代码 请修改为自己的数据库地址
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+
+        'NAME': '',        #mysql数据库名称
+
+        'USER': '',        #mysql数据库用户
+
+        'PASSWORD': '',    #mysql数据库密码
+
+        'HOST': '',        #mysql数据库连接地址
+
+        'PORT': '3306',    #mysql数据库连接端口
+    }
+}
+```
+
+修改好后回到项目根目录
+
+打开终端执行数据库迁移命令
+
+    python manage.py makemigrations
+    python manage.py migrate
+
+
+
+在项目根目录打开终端执行启动命令 
+
+    uwsgi --ini uwsgi.ini
+
+
+
+
+
+
+
 
 
 
