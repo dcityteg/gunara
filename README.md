@@ -21,7 +21,7 @@ ChatGPT 5刀账户KEY 自提网 [点击购买](https://chat.orglen.com)  https:/
 
 ## 使用说明
 
-1. 本项目后端用 `django` 快速搭建，可使用宝塔面板中的python项目管理器快速部署（自己研究）
+1. 本项目后端用 `django` 快速搭建，uwsgi + nginx 部署
 
 2. 本项目支持流式响应，`markdown` 实时转换为 `html`！
 
