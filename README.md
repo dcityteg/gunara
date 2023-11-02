@@ -53,6 +53,34 @@ requests
 
     pip install -r requirements.txt
 
+
+
+在 `.env` 文件中 添加 OpenAI API key 和 代理IP:
+
+```
+# 填入 OPENAI_API_KEY
+
+OPENAI_API_KEY = "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"
+
+#模型
+
+MODEL = "gpt-3.5-turbo-16k-0613"
+
+# 代理url  可替换
+
+ENDPOINT = "https://api.openai.com/v1/chat/completions" 
+```
+### 如何获取：OPENAI_API_KEY
+两种方法 ：
+
+一种是有openai账户的直接登录官网拿到 OPENAI_API_KEY
+
+还有一种直接购买 [点击购买](https://kekey.top/) https://kekey.top 价格良心！
+  
+
+
+
+
 > #### 安装 uwsgi
 
 
