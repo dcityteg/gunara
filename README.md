@@ -36,7 +36,7 @@ ChatGPT 5刀账户KEY 自提网 [点击购买](https://chat.orglen.com)  https:/
 
 
 
-##本地运行
+## 本地运行
 
 在 `.env` 文件中 添加 OpenAI API key 和 代理IP:
 
