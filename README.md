@@ -33,14 +33,116 @@ ChatGPT 5刀账户KEY 自提网 [点击购买](https://chat.orglen.com)  https:/
 
 下载源码上传到网站目录解压或git到网站目录
 
-安装依赖
-`pip install -r requirements.txt`
+> #### 进入项目根目录安装依赖
+
+    pip install -r requirements.txt
+
+若出现以下报错
+
+![输入图片说明](img/image.png)
+
+请删除 `requirements.txt` 内对应的版本号即可 或者直接删除 新建一个 `requirements.txt` 并填入以下内容：
+```
+﻿django-cors-headers
+djangorestframework
+python-dotenv
+django
+requests
+```
+再执行安装依赖
+
+    pip install -r requirements.txt
+
+> #### 安装 uwsgi
+
+
+    pip install uwsgi
+
+进入到项目根目录创建一个 uwsgi.ini 文件 并填入以下信息 
+
+请将项目目录换成自己实际目录切勿直接复制粘贴
+
+```
+[uwsgi]   
+http=127.0.0.1:8000  #联调阶段优先使用http模式，方便定点测试
+
+#项目目录  
+chdir=/www/wwwroot/chat.orglen.com/ 
+
+#项目中wsgi.py文件的目录，相对于项目目录  
+wsgi-file=/www/wwwroot/chat.orglen.com/ChatGPT_python/wsgi.py 
+
+# 指定启动的工作进程数  
+processes=4  
+
+# 指定工作进程中的线程数  
+threads=2  
+master=True  
+
+# 保存启动之后主进程的pid  
+pidfile=uwsgi.pid  
+
+# 设置uwsgi后台运行，用uwsgi.log保存日志信息  
+daemonize=uwsgi.log  
+
+#项目静态地址
+static-map = /static=/www/wwwroot/chat.orglen.com/collectstatic/static
+
+buffer-size     = 65535
+post-buffering  = 32768
+
+
+# 设置虚拟环境的路径  
+#virtualenv=/home/shuan/.virtualenvs/bj18_py3# conda 环境路径  
+```
+
+若是腾讯云、阿里云、华为云、请到控制台放行端口 8000
+
+> #### 启动 uwsgi
+
+在项目根目录打开终端执行启动命令 
+
+    uwsgi --ini uwsgi.ini
+
+
+uwsgi 相关命令
+
+    uwsgi --ini uwsgi.ini    #启动命令
+    uwsgi --stop uwsgi.pid    #停止命令 
+    uwsgi --reload uwsgi.pid    #重启命令
 
 
 
+> #### 配置 nginx
+
+将以下代码添加到 `nginx` 中
+
+```
+    location / {
+        proxy_pass http://127.0.0.1:8000/;
+        # 不缓存，支持流式输出
+        proxy_cache off;  # 关闭缓存
+        proxy_buffering off;  # 关闭代理缓冲
+        chunked_transfer_encoding on;  # 开启分块传输编码
+        tcp_nopush on;  # 开启TCP NOPUSH选项，禁止Nagle算法
+        tcp_nodelay on;  # 开启TCP NODELAY选项，禁止延迟ACK算法
+        keepalive_timeout 300;  # 设定keep-alive超时时间为65秒
 
 
+    }
+   location /static {	#这里就是静态文件的配置
+        expires 30d;
+        autoindex on;
+        add_header Cache-Control private;
+        alias /www/wwwroot/chat.orglen.com/collectstatic/static/;	
+    }
+```
 
+请将静态文件的配置换成自己实际目录切勿直接复制粘贴
+
+![输入图片说明](img/nginx.jpg.png)
+
+保存后直接用你绑定的域名访问即可！
 
 
 
