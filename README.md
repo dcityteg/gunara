@@ -4,9 +4,9 @@
 
 简易版 高仿`ChatGPT` 官网网站，拿来即用
 
-ChatGPT 5刀账户KEY 自提网 [点击购买](https://chat.orglen.com)  https://kekey.top
+ChatGPT 5刀账户KEY 自提网 [点击购买](https://kekey.top)  https://kekey.top
 
-体验地址：[点击体验](https://kekey.top) 
+体验地址：[点击体验](https://chat.orglen.com) 
 
 登录账户：`admin`密码 `admin`
 
