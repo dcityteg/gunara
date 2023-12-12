@@ -295,6 +295,6 @@ ENDPOINT = "https://api.openai.com/v1/chat/completions"
 2. 页面可任各位修改，希望留下项目地址，为此项目吸引更多的 `star` !
 3. 项目使用的开源代理：[https://gitee.com/Flyintro/chatgpt-python-django) ，点个 `star` 支持作者
 4. 此项目适合小白，主打简洁，可不断完善！
-5. 对于项目如有疑问，可加 `QQ` 群823830031交流！
+5. 对于项目如有疑问，可加 `QQ` 群781783044交流！
 
 
