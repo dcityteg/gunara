@@ -147,6 +147,9 @@ uwsgi 相关命令
 
 ```
     location / {
+        #include uwsgi_params;
+        #uwsgi_pass 127.0.0.1:11023;
+        #uwsgi_read_timeout 20;
         proxy_pass http://127.0.0.1:8000/;
         # 不缓存，支持流式输出
         proxy_cache off;  # 关闭缓存
@@ -156,13 +159,12 @@ uwsgi 相关命令
         tcp_nodelay on;  # 开启TCP NODELAY选项，禁止延迟ACK算法
         keepalive_timeout 300;  # 设定keep-alive超时时间为65秒
 
-
     }
    location /static {	#这里就是静态文件的配置
         expires 30d;
         autoindex on;
         add_header Cache-Control private;
-        alias /www/wwwroot/chat.orglen.com/collectstatic/static/;	
+        alias /www/wwwroot/chatgpt/collectstatic/static/;	
     }
 ```
 
