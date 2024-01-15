@@ -149,7 +149,10 @@ uwsgi 相关命令
     location / {
         #include uwsgi_params;
         #uwsgi_pass 127.0.0.1:11023;
-        #uwsgi_read_timeout 20;
+        #uwsgi_read_timeout 100;
+        #uwsgi_buffering off;  # 关闭代理缓冲
+        #uwsgi_cache off;  # 关闭缓存
+        
         proxy_pass http://127.0.0.1:8000/;
         # 不缓存，支持流式输出
         proxy_cache off;  # 关闭缓存
